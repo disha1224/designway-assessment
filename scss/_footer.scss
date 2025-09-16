@@ -1,0 +1,13 @@
+.footer-section{
+    // background: #03032b;
+    background: linear-gradient(135deg, #090e50, #471d71);
+    padding: 30px  0;
+
+    h1{
+        text-align: center;
+        color: $white-color;
+        font-family: $heading-font;
+        font-weight: $bold-font-weight;
+        padding: 2rem 0 1rem 0;
+    }
+}

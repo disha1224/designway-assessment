@@ -1,0 +1,173 @@
+.hero-img {
+    background: url("/../../images/meta-girl.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    @media only screen and (min-width: $md) {
+        height: 999px;
+    }
+
+    h1 {
+        font-weight: $bold-font-weight;
+        font-size: 48px;
+        padding-top: 80px;
+
+        span {
+            display: block;
+        }
+
+        span:nth-child(1) {
+            font-size: 25px;
+        }
+
+        span:nth-child(2) {
+            font-size: 48px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        span:nth-child(3) {
+            font-size: 34px;
+        }
+    }
+
+    .float-icons {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $dark-pink;
+        color: $white-color;
+    }
+
+    /* Left column positions */
+    .col-6:first-child .card-container .float-card:nth-child(1) {
+        --x: 50px;
+        --y: -370px;
+
+        @media only screen and (min-width: $md) {
+            --x: 100px;
+        }
+    }
+
+    .col-6:first-child .card-container .float-card:nth-child(2) {
+        --x: 100px;
+        --y: -220px;
+
+        @media only screen and (min-width: $md) {
+            --x: 200px;
+        }
+    }
+
+    .col-6:first-child .card-container .float-card:nth-child(3) {
+        --x: 150px;
+        --y: -70px;
+
+        @media only screen and (min-width: $md) {
+            --x: 300px;
+        }
+    }
+
+    /* Right column positions */
+    .col-6:last-child .card-container .float-card:nth-child(1) {
+        --x: 700px;
+        --y: -370px;
+
+        @media only screen and (min-width: $md) {
+            --x: 1100px;
+        }
+    }
+
+    .col-6:last-child .card-container .float-card:nth-child(2) {
+        --x: 650px;
+        --y: -220px;
+
+        @media only screen and (min-width: $md) {
+            --x: 1000px;
+        }
+    }
+
+    .col-6:last-child .card-container .float-card:nth-child(3) {
+        --x: 600px;
+        --y: -70px;
+
+        @media only screen and (min-width: $md) {
+            --x: 900px;
+        }
+    }
+}
+
+.card-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    pointer-events: none;
+
+    .float-card {
+        width: 180px;
+        height: 60px;
+        border-radius: 12px;
+        padding: 12px 15px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        background: linear-gradient(45deg, #ff4d91, #7b5dff);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        // position: absolute;
+        // bottom: 0;
+        opacity: 0;
+        animation: floatUp 12s ease-in-out infinite;
+        // display: flex;
+        align-items: center;
+        gap: 10px;
+
+        p {
+            font-size: 12px;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        span {
+            font-size: 20px;
+            font-weight: $bold-font-weight;
+        }
+    }
+
+    .float-icons {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+    }
+}
+
+
+/* Float upwards and fade */
+@keyframes floatUp {
+    0% {
+        transform: translate(var(--x, --y), 0px) scale(0.9);
+        opacity: 0;
+    }
+
+    10% {
+        transform: translate(var(--x), var(--y)) scale(0.9);
+        opacity: 1;
+    }
+
+    70% {
+        transform: translate(var(--x), calc(var(--y) - 200px)) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(var(--x), calc(var(--y) - 400px)) scale(1.05);
+        opacity: 0;
+    }
+}
